@@ -107,11 +107,11 @@
 				B73FED7C1FA9A71A00B17110 /* ItemsViewController.swift */,
 				B73FED7E1FA9A7F200B17110 /* Item.swift */,
 				B73FED801FA9AD9500B17110 /* ItemStore.swift */,
+				B73FED821FA9C16400B17110 /* ItemCell.swift */,
 				B73FED521FA9A61800B17110 /* Main.storyboard */,
 				B73FED551FA9A61800B17110 /* Assets.xcassets */,
 				B73FED571FA9A61800B17110 /* LaunchScreen.storyboard */,
 				B73FED5A1FA9A61800B17110 /* Info.plist */,
-				B73FED821FA9C16400B17110 /* ItemCell.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
