@@ -130,23 +130,22 @@ class ItemsViewController: UITableViewController {
         // Update the model
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
- 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        //If the triggered seuge is the "showItem" seuge
+        switch segue.identifier {
+        case "showItem"?:
+            //Figure out which row was just tapped
+            if let row = tableView.indexPathForSelectedRow?.row {
+                
+                //Get the item associated with his row and pass it along
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destination as! DetailViewController
+                detailViewController.item = item
+            }
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
     }
-    */
-
 }
