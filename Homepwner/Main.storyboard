@@ -187,10 +187,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="LX7-pV-1D4" id="lDm-TC-BHQ"/>
-                        <outlet property="nameField" destination="YVF-QU-lDs" id="9Js-jU-OlI"/>
+                        <outlet property="dateLabel" destination="LX7-pV-1D4" id="t5b-qM-Kre"/>
+                        <outlet property="nameField" destination="YVF-QU-lDs" id="6du-Ww-5hh"/>
                         <outlet property="serialNumberField" destination="bJs-PY-usd" id="hg4-qy-Vqr"/>
-                        <outlet property="valueField" destination="H3Y-Of-OZV" id="Xrl-2q-9An"/>
+                        <outlet property="serialNumberTextField" destination="bJs-PY-usd" id="pTL-xS-d6K"/>
+                        <outlet property="valueField" destination="H3Y-Of-OZV" id="SfW-9W-1Dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2K6-sg-xmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
