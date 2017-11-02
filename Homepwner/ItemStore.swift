@@ -17,6 +17,12 @@ class ItemStore {
         return documentDirectory.appendingPathComponent("items.archive")
     }()
     
+    init() {
+        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path) as?  [Item] {
+            allItems = archivedItems
+        }
+    }
+    
     func saveChanges() -> Bool {
         print("Saving items to: \(itemArchiveURL.path)")
         return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path)
