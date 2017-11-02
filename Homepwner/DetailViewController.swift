@@ -17,11 +17,15 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var dateLabel: UILabel!
     
     @IBOutlet var imageView: UIImageView!
+    
     var item: Item! {
         didSet {
             navigationItem.title = item.name
         }
     }
+    
+    var imageStore: ImageStore!
+    
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         
@@ -39,6 +43,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //Get picked image from info dictionary
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //Store the image in the ImageStore for the item's key
+        imageStore.setImage(image, forKey: item.itemKey)
         //Put that image on the screen in the image view
         imageView.image = image
         //Take image picker off the screen you must call this dismiss method
@@ -67,6 +73,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
         dateLabel.text = dateFormatter.string(from: item.dateCreated)
+        //Get the item key
+        let key = item.itemKey
+        //If there is an associated image with the item display it on the image view
+        let imageToDisplay = imageStore.image(forKey: key)
+        imageView.image = imageToDisplay
     }
     
     override func viewWillDisappear(_ animated: Bool) {
