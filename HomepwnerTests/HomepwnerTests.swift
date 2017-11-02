@@ -1,9 +1,5 @@
 //
-//  HomepwnerTests.swift
-//  HomepwnerTests
-//
-//  Created by nguyen.phuc.khanh on 11/1/17.
-//  Copyright © 2017 nguyen.phuc.khanh. All rights reserved.
+//  Copyright © 2015 Big Nerd Ranch
 //
 
 import XCTest

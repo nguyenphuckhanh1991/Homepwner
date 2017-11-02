@@ -6,21 +6,20 @@
 //  Copyright © 2017 nguyen.phuc.khanh. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Item: NSObject {
+    
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
-    let dateCreate: Date
+    let dateCreated: Date
     
     init(name: String, serialNumber: String?, valueInDollars: Int) {
         self.name = name
-        self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
-        self.dateCreate = Date()
-        
-        super.init()
+        self.valueInDollars = valueInDollars
+        self.dateCreated = Date()
     }
     
     convenience init(random: Bool = false) {
@@ -37,13 +36,14 @@ class Item: NSObject {
             let randomName = "\(randomAdjective) \(randomNoun)"
             let randomValue = Int(arc4random_uniform(100))
             let randomSerialNumber =
-                UUID().uuidString.components(separatedBy: "-").first!
+            UUID().uuidString.components(separatedBy: "-").first!
             
             self.init(name: randomName,
-                      serialNumber: randomSerialNumber,
-                      valueInDollars: randomValue)
+                serialNumber: randomSerialNumber,
+                valueInDollars: randomValue)
         } else {
             self.init(name: "", serialNumber: nil, valueInDollars: 0)
         }
     }
+    
 }

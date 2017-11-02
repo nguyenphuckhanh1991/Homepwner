@@ -9,22 +9,16 @@
 import UIKit
 
 class ItemCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var serialNumberLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var serialNumberLabel: UILabel!
+    @IBOutlet var valueLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
         nameLabel.adjustsFontForContentSizeCategory = true
         serialNumberLabel.adjustsFontForContentSizeCategory = true
         valueLabel.adjustsFontForContentSizeCategory = true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
