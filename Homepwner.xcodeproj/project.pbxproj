@@ -113,11 +113,11 @@
 				6B64C0FB1B84C7C300288BE3 /* LaunchScreen.storyboard */,
 				6B64C0FE1B84C7C300288BE3 /* Info.plist */,
 				6B64C1201B84C8EB00288BE3 /* ItemsViewController.swift */,
+				6B64C1281B876C0100288BE3 /* DetailViewController.swift */,
 				6B64C1221B84C9C900288BE3 /* Item.swift */,
 				6B64C1241B84CB3F00288BE3 /* ItemStore.swift */,
-				6B64C1261B86265900288BE3 /* ItemCell.swift */,
-				6B64C1281B876C0100288BE3 /* DetailViewController.swift */,
 				B75627931FAACF0E007965DF /* ImageStore.swift */,
+				6B64C1261B86265900288BE3 /* ItemCell.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
