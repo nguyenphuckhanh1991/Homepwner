@@ -29,7 +29,7 @@ class ImageStore {
             return existingImage
         }
         let url = imageURL(forKey: key)
-        guard let imageFromDisk = UIImage(contentsOfFile: url) else {
+        guard let imageFromDisk = UIImage(contentsOfFile: url.path) else {
             return nil
         }
         cache.setObject(imageFromDisk, forKey: key as NSString)
@@ -42,8 +42,8 @@ class ImageStore {
         let url = imageURL(forKey: key)
         do {
         try FileManager.default.removeItem(at: url)
-        } catch {
-            print("Error removing the image from disk: \(error)")
+        } catch let deleteError {
+            print("Error removing the image from disk: \(deleteError)")
         }
     }
     
